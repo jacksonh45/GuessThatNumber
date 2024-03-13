@@ -40,5 +40,29 @@ while(restartGame){
          attempts = parseInt(attempts)
      }
 
+     guess = prompt (`Please enter a guess from 1-${rangeNum}. You have ${attempts} attempt(s) left.`)
+
+     while (true){
+
+        guess = parseInt(guess)
+
+        while(!guess || guess < 1 || guess > rangeNum){
+            guess = prompt (`Please enter a guess from 1-${rangeNum}`)
+            guess = parseInt(guess)
+        }
+            attempts--;
+
+            if (guess === randomNum){
+                alert(`CONGRATULATIONS, YOU GUESSED THE CORRECT NUMBER: ${randomNum}`)
+                break;
+            } else if (attempts === 0){
+                alert (`Sorry, but you have run out of attempts :( \nThe number was ${randomNum}`)
+                break;
+            } else if (guess < randomNum){
+                guess = prompt (`Too low. You have ${attempts} attempt(s) left`)
+            } else if (guess > randomNum){
+                guess = prompt(`Too high. You have ${attempts} attempt(s) left `)
+            }
+     }
     break
 }
