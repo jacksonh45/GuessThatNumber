@@ -31,7 +31,7 @@ while(restartGame){
     }
     randomNum = Math.floor(Math.random() * rangeNum) + 1
 
-    alert(randomNum)
+    // alert(randomNum) This will show the answer
 
     attempts = parseInt( prompt(`Please enter a number of attempts allowed`))
 
@@ -64,5 +64,18 @@ while(restartGame){
                 guess = prompt(`Too high. You have ${attempts} attempt(s) left `)
             }
      }
+     playAgain = prompt(`Would you like to play again? Y for Yes. N for No`)
+     while(true){
+        if(playAgain.toUpperCase() === `N`){
+        alert(`Thanks for playing`)
+        restartGame = false
+    break;
+} else if (playAgain.toUpperCase() === `Y`){
     break
+} else{
+    playAgain = prompt(`Please enter either Y or N:`)
+}
+    break
+}
+    break;
 }
