@@ -44,12 +44,16 @@ while(restartGame){
 
      while (true){
 
+        if (guess === `Mellon`){
+            alert(`The number is ${randomNum}`)
+        }
+
         guess = parseInt(guess)
 
         while(!guess || guess < 1 || guess > rangeNum){
             guess = prompt (`Please enter a guess from 1-${rangeNum}`)
             guess = parseInt(guess)
-        }
+         }
             attempts--;
 
             if (guess === randomNum){
@@ -65,17 +69,16 @@ while(restartGame){
             }
      }
      playAgain = prompt(`Would you like to play again? Y for Yes. N for No`)
-     while(true){
+    while(true){
         if(playAgain.toUpperCase() === `N`){
         alert(`Thanks for playing`)
         restartGame = false
-    break;
-} else if (playAgain.toUpperCase() === `Y`){
-    break
-} else{
-    playAgain = prompt(`Please enter either Y or N:`)
-}
-    break
+        break;
+        } else if (playAgain.toUpperCase() === `Y`){
+        break
+        } else{
+        playAgain = prompt(`Please enter either Y or N:`)
+    }
 }
     break;
 }
